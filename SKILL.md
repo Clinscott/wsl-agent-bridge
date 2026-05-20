@@ -41,13 +41,13 @@ Redirect Windows host tool execution to run natively inside WSL:
 - **Example configuration (`config.json`)**:
   ```json
   "mcpServers": {
-    "cstar-kernel": {
+    "<mcp-server-name>": {
       "command": "wsl.exe",
       "args": [
         "-d", "Ubuntu", "-e",
-        "/home/<WSLUser>/.nvm/versions/node/v25.8.1/bin/node",
-        "--import", "file:///home/<WSLUser>/Corvus/CStar/node_modules/tsx/dist/loader.mjs",
-        "/home/<WSLUser>/Corvus/CStar/src/tools/cstar-kernel-mcp.ts"
+        "/home/<WSLUser>/.nvm/versions/node/v.../bin/node",
+        "--import", "file:///home/<WSLUser>/<project-root>/node_modules/tsx/dist/loader.mjs",
+        "/home/<WSLUser>/<project-root>/path/to/server.ts"
       ]
     }
   }
@@ -93,9 +93,9 @@ Configure the sidebar to recognize WSL repository locations:
   ```json
   {
     "projects": {
-      "\\\\wsl.localhost\\Ubuntu\\home\\<WSLUser>\\Corvus": "corvus",
-      "\\\\wsl.localhost\\Ubuntu\\home\\<WSLUser>\\Corvus\\CStar": "cstar",
-      "\\\\wsl.localhost\\Ubuntu\\home\\<WSLUser>\\Corvus\\ENM\\wild-card-website": "wild-card-website"
+      "\\\\wsl.localhost\\Ubuntu\\home\\<WSLUser>\\<ParentRepoDir>": "<parent-slug>",
+      "\\\\wsl.localhost\\Ubuntu\\home\\<WSLUser>\\<ParentRepoDir>\\<SubRepoDir1>": "<sub-slug-1>",
+      "\\\\wsl.localhost\\Ubuntu\\home\\<WSLUser>\\<ParentRepoDir>\\<SubRepoDir2>": "<sub-slug-2>"
     }
   }
   ```
