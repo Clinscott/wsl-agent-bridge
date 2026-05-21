@@ -1,0 +1,3 @@
+display_name: WSL Agent Bridge
+short_description: Bridge Windows Antigravity, Codex, and Claude agents into WSL repos and runtimes.
+default_prompt: Audit and configure a Windows-to-WSL agent bridge for Antigravity, Codex, or Claude.

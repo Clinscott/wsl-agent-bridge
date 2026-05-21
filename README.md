@@ -1,15 +1,25 @@
 # WSL Agent Bridge
 
-A reusable agentic developer skill and lifecycle integration workflow to bridge Windows-native agent IDE environments (Antigravity and Codex) with WSL (Ubuntu) filesystems and command execution layers.
+A reusable agent skill for bridging Windows-hosted agent apps into WSL-hosted
+projects and runtimes.
 
-## Features
-- **WSL MCP Redirection**: Guide to running host MCP servers inside WSL via `wsl.exe` with absolute runtime pathing.
-- **Symlink-Preserving Two-Way Sync**: Setup for a lifecycle-hooked synchronization pipeline that preserves git-symlinked directories (`rsync -auK`).
-- **Sidebar Integration**: Configuration for mapping workspaces using Windows UNC paths (`\\wsl.localhost\...`).
-- **Cross-Platform Path Translation**: Lightweight helper libraries in Python and TypeScript to transparently sanitize host-supplied UNC or mapped-drive paths down to native Linux directories before runtime.
+Supported surfaces:
 
-## Installation and Setup
-Refer to [SKILL.md](SKILL.md) for step-by-step instructions.
+- Antigravity
+- Codex
+- Claude
 
-## License
-MIT License. See [LICENSE](LICENSE) for details.
+The skill separates shared WSL bridge rules from agent-specific config shapes so
+agents do not paste Antigravity JSON into Codex TOML or assume Claude uses one
+fixed config location.
+
+Quick audit:
+
+```bash
+python3 scripts/audit_wsl_agent_bridge.py --json
+```
+
+Then follow `SKILL.md` and load only the relevant reference under
+`references/`.
+
+License: MIT. See `LICENSE`.
